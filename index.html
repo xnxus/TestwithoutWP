@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Налаштування сайту</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header header-<?php echo $header_style; ?>">
+    <h1>Налаштування сайту</h1>
+  </header>
+  <main class="main">
+    <section class="content">
+      <h2>ACF Settings</h2>
+      <form action="" method="post">
+        <p>
+          <label for="sidebar_position">Позиція сайдбару:</label>
+          <select name="sidebar_position" id="sidebar_position">
+            <option value="left" <?php if ($sidebar_position === 'left') echo 'selected'; ?>Ліворуч</option>
+            <option value="right" <?php if ($sidebar_position === 'right') echo 'selected'; ?>Праворуч</option>
+            <option value="none" <?php if ($sidebar_position === 'none') echo 'selected'; ?>Без сайдбару</option>
+          </select>
+        </p>
+        <p>
+          <label for="footer_style">Стиль футера:</label>
+          <select name="footer_style" id="footer_style">
+            <option value="1" <?php if ($footer_style === '1') echo 'selected'; ?>Футер 1</option>
+            <option value="2" <?php if ($footer_style === '2') echo 'selected'; ?>Футер 2</option>
+          </select>
+        </p>
+        <p>
+          <label for="header_style">Стиль шапки:</label>
+          <select name="header_style" id="header_style">
+            <option value="1" <?php if ($header_style === '1') echo 'selected'; ?>Шапка 1</option>
+            <option value="2" <?php if ($header_style === '2') echo 'selected'; ?>Шапка 2</option>
+          </select>
+        </p>
+        <p>
+          <label for="background_color">Колір фону:</label>
+          <input type="color" name="background_color" id="background_color" value="<?php echo $background_color; ?>">
+        </p>
+        <p>
+          <label for="text_color">Колір тексту:</label>
+          <input type="color" name="text_color" id="text_color" value="<?php echo $text_color; ?>">
+        </p>
+        <input class="save" type="submit" value="Зберегти">
+      </form>
+    </section>
+    <aside class="sidebar sidebar-<?php echo $sidebar_position; ?>">
+      <h2>Sidebar</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </aside>
+  </main>
+  <footer class="footer footer-<?php echo $footer_style; ?>">
+    <p>Copyright &copy; 2023</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
